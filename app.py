@@ -7,27 +7,36 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+st.markdown(
+    """
+    <script>
+        window.scrollTo(0, 0);
+    </script>
+    """,
+    unsafe_allow_html=True
+)
+
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 ASSETS_DIR = current_dir / "assets"
 
 PROFILE = {
     "name": "JOHN JOSEPH LABORADA",
-    "role": "IT Student | Aspiring Web Developer | UI/UX",
+    "role": "Aspiring Software Developer | UI/UX Design",
     "location": "Carcar City, Cebu, Philippines",
     "about_short": (
-        "I build practical systems that solve real problems—from online ticketing platforms to admin dashboards. "
-        "I specialize in turning requirements into working applications using modern web technologies, "
-        "and I'm actively seeking a remote IT internship where I can contribute, learn, and deliver results."
+        "I'm a fresh IT graduate who's been building web projects throughout college. I enjoy turning ideas into something real "
+        "whether it's a full system, a clean UI, or just a small side project. I'm always learning, always building, "
+        "and always looking for the next thing to figure out."
     ),
     "links": {
         "GitHub": "https://github.com/moshiverse",
-        "LinkedIn": "https://linkedin.com/in/johnjoseph-laborada-8b341430a",
-        "Email": "mailto:laboradajohnji@gmail.com",
+        "LinkedIn": "https://www.linkedin.com/in/john-joseph-laborada-8b341430a/",
+        "Email": "mailto:josephjohn.laborada@gmail.com",
     },
 }
 
 ABOUT_ME_TEXT = """
-I am John Joseph Laborada, 24 years of age and currently pursuing a degree in Information Technology, where I developed a strong interest 
+I am John Joseph Laborada, 22 years of age and recently graduated with a degree of Bachelors of Science in Information Technology, where I developed a strong interest 
 in software development and solving problems through technology. My journey in tech started with 
 curiosity about how applications and systems work, and over time, that curiosity turned into a 
 passion for building them myself. Through various school projects and activities, I gained 
@@ -41,52 +50,65 @@ projects that allow me to practice and explore new ideas in programming.
 """
 
 SKILLS_DATA = {
-    "Programming / Web": ["ReactJS", "Spring Boot", "Java", "C", "C++", "Python", "HTML/CSS"],
-    "UI/UX / Design": ["Figma", "Canva", "UI/UX Optimization", "UI Wireframes", "Wordpress"],
-    "Databases & Tools": ["MySQL", "PostgreSQL", "Git", "GitHub", "VS Code"],
-    "Other Skills": ["Problem Solving", "Team Collaboration", "Communication", "Time management", "Adaptability"],
+    "Programming / Web": ["ReactJS", "Spring Boot", "Java", "C", "C++", "Python", "HTML", "CSS", "Tailwind CSS"],
+    "UI/UX / Design": ["Figma", "Canva", "Wireframing", "Wordpress"],
+    "Databases & Tools": ["MySQL", "Supabase (PostgreSQL)", "Git", "GitHub", "Postman", "Active Pieces"],
+    "Soft Skills": ["Problem Solving", "Team Collaboration", "Communication", "Time management", "Adaptability", "Work Ethics", "Flexibility"],
 }
 
 PROJECTS = [
     {
-        "name": "BusMate",
+        "name": "Online Bus Ticketing System",
         "type": "Bus Ticketing System",
-        "desc": "A modern intercity bus ticketing system designed to make travel booking faster, safer, and more convenient.",
-        "tags": ["JavaScript", "Java", "CSS", "Kotlin"],
+        "desc": "Bus ticketing platform with seat selection, QR-based boarding, online payments, route management, and analytics dashboard.",
+        "tags": ["JavaScript", "Java", "Kotlin"],
         "img": "busmate.png",
         "links": {
             "GitHub": "https://github.com/moshiverse/BusMate-OnlineTicketingSystem-IT342-G01-Group6"
         },
     },
     {
-        "name": "SPMP Evaluator",
+        "name": "IEEE Docs Evaluator",
         "type": "Academic Tool",
-        "desc": "An automated evaluation platform that provides feedback, scoring, and task management capabilities for student projects.",
-        "tags": ["JavaScript", "Java", "CSS"],
-        "img": "spmp.png",
+        "desc": "IEEE Docs Evaluator consolidates four separate AI-driven document evaluator systems into a single integrated application.",
+        "tags": ["Java", "Javascript", "Vercel", "OpenAI API"],
+        "img": "IEEE-Docs.png",
         "links": {
-            "GitHub": "https://github.com/lawas-tess/SPMP-Evaluator"
+            "GitHub": "https://github.com/Hello-Kalibutan-Team/IEEE-Docs-Evaluator"
         },
     },
     {
-        "name": "CardWise",
-        "type": "Study Aid",
-        "desc": "Solves study issues by providing a digital platform where students can easily create, categorize, and review flashcards.",
-        "tags": ["JavaScript", "Java", "CSS"],
-        "img": "cardwise.png",
+        "name": "InTurn.AI - Chatbot",
+        "type": "Intern Tracking Assistant",
+        "desc": "An AI-powered internship tracking assistant for university students. Features hours tracking, mentor communication, and automated report generation.",
+        "tags": ["Python", "Streamlit", "OpenAI API"],
+        "img": "InTurnAI.png",
         "links": {
-            "GitHub": "https://github.com/myNameIsJoshua1/CardWise"
+            "GitHub": "https://github.com/AI-Chatbotssss/AI-Chatbot"
         },
     },
+]
+
+EXPERIENCE = [
+    {
+        "title": "IT Intern – WordPress Developer",
+        "company": "Knowles Training Institute, Singapore (Remote)",
+        "date": "Jan 2026 – Apr 2026",
+        "points": [
+            "Developed a responsive booking website using WordPress and Elementor.",
+            "Designed UI/UX layouts for desktop and mobile devices.",
+            "Implemented email request handling for bookings and inquiries."
+        ]
+    }
 ]
 
 EDUCATION = [
     {
         "degree": "BS Information Technology",
         "school": "Cebu Institute of Technology - University",
-        "year": "2022 – Present",
-        "sub": "Expected Graduation: May 2026",
-        "desc": "Relevant Coursework: Web Development, Data Management, UI/UX Design",
+        "year": "2022 – 2026",
+        "sub": "Recently Graduated",
+        "desc": "Relevant Coursework: Web Development, Data Management, Applied AI, Analytics, UI/UX Design",
     },
     {
         "degree": "AWS Academy Graduate",
@@ -95,14 +117,41 @@ EDUCATION = [
         "sub": "Amazon Web Services",
         "desc": "Comprehensive training in cloud security, architecture, and core AWS services.",
     },
+    {
+        "degree": "TESDA AI Training",
+        "school": "StackTrek",
+        "year": "2026",
+        "sub": "Basic Automation",
+        "desc": "Basic training in Configuring Basic AI Driven Workflows",
+    },
 ]
 
 st.markdown(
     """
     <style>
-        .stApp { 
-            background-color: #0A0A0F;
-            color: #e0e0e0;
+        html, body {
+            scroll-behavior: auto !important;
+        }
+        .stApp {
+            background-color: #0A0A0A !important;
+        }
+
+        /* Fixed texture overlay — cubes pattern at 20% opacity */
+        .stApp::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-repeat: repeat;
+            opacity: 0.20;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Make sure all Streamlit content sits above the texture */
+        .stApp > * {
+            position: relative;
+            z-index: 1;
         }
         
         header[data-testid="stHeader"] {
@@ -250,18 +299,73 @@ st.markdown(
             .navbar-links { display: none; }
             .equal-height-container { flex-direction: column; }
         }
-    </style>
+
+        .project-card {
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 20px;
+        overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-content {
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            margin-top: auto;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
+        }
+
+        .social-grid {
+        display:flex;
+        gap:16px;
+        margin-top:20px;
+    }
+
+    .social-card {
+        width:70px;
+        height:70px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#090909;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:20px;
+        text-decoration:none;
+        transition:.3s ease;
+    }
+
+    .social-card:hover {
+        transform:translateY(-6px);
+        border-color:rgba(168,85,247,.5);
+        box-shadow:0 15px 35px rgba(168,85,247,.15);
+    }
+
+    .social-card svg {
+        width:30px;
+        height:30px;
+    }
     
-    <div class="navbar">
-        <div class="brand-name">PORTFOLIO</div>
-        <div class="navbar-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-        </div>
-    </div>
+    </style>
+
     """,
     unsafe_allow_html=True
 )
@@ -283,7 +387,7 @@ st.markdown('<div id="home" class="anchor-offset"></div>', unsafe_allow_html=Tru
 c1, c2 = st.columns([2.5, 1], gap="medium")
 
 with c1:
-    st.markdown("<div style='font-size: 3.5rem; font-weight: 800; line-height: 1.1;'>Hello, I'm Joseph</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 3.5rem; font-weight: 800; line-height: 1.1;'>John Joseph Laborada</div>", unsafe_allow_html=True)
     st.markdown(f"<h3 style='color: #a855f7; margin-bottom: 20px;'>{PROFILE['role']}</h3>", unsafe_allow_html=True)
     st.markdown(f"<div class='justified-text'>{PROFILE['about_short']}</div>", unsafe_allow_html=True)
 
@@ -296,20 +400,19 @@ with c1:
     with cols[2]:
         st.link_button("Email", PROFILE["links"]["Email"], use_container_width=True)
     with cols[3]:
-        cv_bytes = load_pdf_bytes("CV.pdf")
-        if cv_bytes:
+        Resume_bytes = load_pdf_bytes("Laborada-Resume.pdf")
+        if Resume_bytes:
             st.download_button(
-                "Download CV",
-                data=cv_bytes,
-                file_name="John_Joseph_Laborada_CV.pdf",
+                "Resume",
+                data=Resume_bytes,
+                file_name="Laborada_Resume.pdf",
                 mime="application/pdf",
                 use_container_width=True
             )
         else:
-            st.button("CV (missing)", disabled=True, use_container_width=True)
+            st.button("Resume (missing)", disabled=True, use_container_width=True)
 
     
-
 with c2:
     avatar_path = load_image("avatar.jpg")
     if avatar_path:
@@ -340,139 +443,101 @@ st.markdown(
             <h3 style="margin-top: 0; color: #a855f7;">Details</h3>
             <p><strong>Location:</strong><br>{PROFILE['location']}</p>
             <div style="flex-grow:1;"></div>
-            <p><strong>Status:</strong><br>Intern at Knowles Training Institute</p>
+            <p><strong>Status:</strong><br>Available</p>
             <div style="flex-grow:1;"></div>
-            <p><strong>Interests:</strong><br>Chess, Anime, Coding</p>
+            <p><strong>Interests:</strong><br>Chess, Anime, Coding, AI</p>
         </div>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-st.write("")
-st.markdown("<div class='section-header'>My BSIT Journey</div>", unsafe_allow_html=True)
-
-row1_col1, row1_col2, row1_col3, row1_col4 = st.columns(4)
-with row1_col1:
-    with st.container(border=True):
-        st.metric("Experience", "3 Years", "Coding")
-with row1_col2:
-    with st.container(border=True):
-        st.metric("Education", "4th Year", "Cebu Institute of Technology - University")
-with row1_col3:
-    with st.container(border=True):
-        st.metric("Status", "Intern", "Knowles Training Institute")
-with row1_col4:
-    with st.container(border=True):
-        st.metric("Projects", "10+", "Completed/Ongoing")
-
-st.write("")
-grid_c1, grid_c2 = st.columns(2, gap="medium")
-
-with grid_c1:
-    with st.container(border=True):
-        st.markdown("#### The Beginning")
-        st.markdown(
-            """
-            <div class="justified-text">
-            When I first entered Cebu Institute of Technology - University as a BSIT student, I was unsure 
-            which area of technology I would eventually pursue. I only knew that I was curious about how 
-            applications worked behind the scenes. During my first year, I found programming challenging, 
-            especially when debugging errors that I did not fully understand. There were moments when projects 
-            felt overwhelming, but instead of giving up, I treated every mistake as part of the learning process.
-            <br><br>
-            Over time, those struggles became stepping stones. Through lectures, projects, and hands-on activities, 
-            I gradually improved my problem-solving skills and gained confidence in building applications. I began to 
-            appreciate not just writing code, but understanding how software is designed, structured, and improved over time.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-with grid_c2:
-    with st.container(border=True):
-        st.markdown("#### Discovering My Strengths")
-        st.markdown(
-            """
-            <div class="justified-text">
-            As I progressed through my degree, I started exploring different areas of development and discovered a growing interest 
-            in full-stack systems. I enjoyed seeing how the frontend and backend connect to create a complete and functional application. 
-            Working with technologies such as Java, ReactJS, PostgreSQL, and Figma helped me understand how ideas are transformed into real 
-            systems.
-            <br><br>
-            Each project taught me something new, whether it was designing user interfaces, structuring databases, or solving unexpected technical 
-            issues. More than just learning tools, I learned how to think critically, adapt to challenges, and continuously improve my work.
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-st.write("")
-with st.container(border=True):
-    st.markdown("#### Looking Ahead")
-    st.markdown(
-        """
-        As I approach graduation, I reflect on how much I have grown, not only as a student, but as a future professional in the technology field. 
-        What started as curiosity has turned into a clear direction and purpose. I aim to continue developing my skills in software and full-stack 
-        development while gaining real-world experience that will challenge me further.
-        <br><br>
-        My goal is not only to build systems, but to build solutions that are useful, reliable, and meaningful. I look forward to the next chapter of 
-        my journey, where I can continue learning, contributing, and evolving as a developer.
-        """,
-        unsafe_allow_html=True
-    )
-
 st.markdown('<div id="skills" class="anchor-offset"></div>', unsafe_allow_html=True)
 st.markdown("<div class='section-header'>Skills & Technologies</div>", unsafe_allow_html=True)
 
+# Tabs (safe)
 tabs = st.tabs(list(SKILLS_DATA.keys()))
+
 for i, (category, skills) in enumerate(SKILLS_DATA.items()):
     with tabs[i]:
-        pills_html = "".join([f"<span class='skill-pill'>{skill}</span>" for skill in skills])
+        pills_html = "".join(
+            [f"<span class='skill-pill'>{skill}</span>" for skill in skills]
+        )
+
         st.markdown(
             f"""
             <div class="skill-container">
-                <h4 style="margin-bottom: 15px; color: #d8b4fe;">{category}</h4>
+                <h4 style="margin-bottom: 15px; color: #d8b4fe;">
+                    {category}
+                </h4>
                 <div>{pills_html}</div>
             </div>
             """,
             unsafe_allow_html=True
         )
 
+
+st.markdown("---")
+st.markdown('<div id="experience" class="anchor-offset"></div>', unsafe_allow_html=True)
+st.markdown("<div class='section-header'>Experience</div>", unsafe_allow_html=True)
+
+# IMPORTANT: make sure EXPERIENCE is defined only ONCE in your whole project
+for exp in EXPERIENCE:
+    with st.container(border=True):
+        c1, c2 = st.columns([4, 1])
+
+        with c1:
+            st.markdown(f"### {exp['title']}")
+            st.markdown(f"**{exp['company']}**")
+
+            for point in exp.get("points", []):
+                st.markdown(f"• {point}")
+
+        with c2:
+            st.markdown(
+                f"<h4 style='text-align:right; color:#a855f7'>{exp['date']}</h4>",
+                unsafe_allow_html=True
+            )
+
+
 st.markdown("---")
 st.markdown('<div id="projects" class="anchor-offset"></div>', unsafe_allow_html=True)
 st.markdown("<div class='section-header'>Featured Projects</div>", unsafe_allow_html=True)
 
-search = st.text_input("Search projects", "")
-tag_options = sorted({t for p in PROJECTS for t in p["tags"]})
-selected_tags = st.multiselect("Filter", tag_options)
+if PROJECTS:
 
-filtered_projects = []
-for p in PROJECTS:
-    text = f"{p['name']} {p['type']} {p['desc']}".lower()
-    matches_search = search.lower() in text if search else True
-    matches_tags = any(t in selected_tags for t in p["tags"]) if selected_tags else True
-    if matches_search and matches_tags:
-        filtered_projects.append(p)
+    cols_per_row = 3
+    p_cols = st.columns(cols_per_row)
 
-st.caption(f"Currently showing {len(filtered_projects)} project(s) for now")
+    for i, project in enumerate(PROJECTS):
+        with p_cols[i % cols_per_row]:
 
-p_cols = st.columns(3, gap="medium")
-for i, project in enumerate(filtered_projects):
-    with p_cols[i % 3]:
-        with st.container(border=True):
-            img_path = load_image(project["img"])
-            if img_path:
-                st.image(img_path, use_container_width=True)
+            with st.container(border=True):
 
-            st.subheader(project["name"])
-            st.caption(project["type"])
-            st.write(project["desc"])
-            st.markdown(" ".join([f"`{t}`" for t in project["tags"]]))
+                img_path = load_image(project.get("img"))
 
-            st.write("")
-            for label, url in project.get("links", {}).items():
-                st.link_button(label, url, use_container_width=True)
+                if img_path:
+                    st.image(img_path, use_container_width=True)
+
+                st.subheader(project.get("name", "Untitled Project"))
+                st.caption(project.get("type", ""))
+
+                st.write(project.get("desc", ""))
+
+                tags = project.get("tags", [])
+                if tags:
+                    st.markdown(" ".join([f"`{t}`" for t in tags]))
+
+                st.write("")
+
+                links = project.get("links", {})
+                if links:
+                    for label, url in links.items():
+                        st.link_button(label, url, use_container_width=True)
+else:
+    st.info("No projects found.")
+
+
 
 st.markdown("---")
 st.markdown('<div id="education" class="anchor-offset"></div>', unsafe_allow_html=True)
@@ -480,14 +545,21 @@ st.markdown("<div class='section-header'>Education & Certifications</div>", unsa
 
 for edu in EDUCATION:
     with st.container(border=True):
+
         c_edu1, c_edu2 = st.columns([3, 1])
+
         with c_edu1:
-            st.markdown(f"### {edu['degree']}")
-            st.markdown(f"**{edu['school']}**")
+            st.markdown(f"### {edu.get('degree', '')}")
+            st.markdown(f"**{edu.get('school', '')}**")
             st.caption(edu.get("sub", ""))
-            st.write(edu["desc"])
+            st.write(edu.get("desc", ""))
+
         with c_edu2:
-            st.markdown(f"<h4 style='text-align:right; color:#a855f7'>{edu['year']}</h4>", unsafe_allow_html=True)
+            st.markdown(
+                f"<h4 style='text-align:right; color:#a855f7'>{edu.get('year', '')}</h4>",
+                unsafe_allow_html=True
+            )
+
 
 st.markdown(
     """
